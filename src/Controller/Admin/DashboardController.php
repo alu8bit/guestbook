@@ -20,8 +20,6 @@ class DashboardController extends AbstractDashboardController
     {
         $routeBuilder = $this->get(AdminUrlGenerator::class);
         return $this->redirect($routeBuilder->setController(ConferenceCrudController::class)->generateUrl());
-
-        return  parent::index();
     }
 
     public function configureDashboard(): Dashboard
@@ -32,7 +30,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToRoute('Back to website', 'fa fa-home', 'homepage');
         yield MenuItem::linkToCrud('Conference', 'fa fa-list', Conference::class)->setController(ConferenceCrudController::class);
         yield MenuItem::linkToCrud('Comments', 'fa fa-list', Comment::class)->setController(CommentCrudController::class);
     }
