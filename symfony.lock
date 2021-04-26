@@ -109,6 +109,9 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "predis/predis": {
+        "version": "v1.1.7"
+    },
     "psr/cache": {
         "version": "2.0.0"
     },
